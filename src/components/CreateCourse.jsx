@@ -34,7 +34,7 @@ function CreateCourse() {
         else{
             setError(false);
         const access_token =  JSON.parse( localStorage.getItem("access_token"));
-        axios.post("http://localhost:3000/admin/courses",{
+        axios.post("https://coursify.onrender.com/admin/courses",{
             title:title,
             description:desc,
             price:price,
@@ -64,11 +64,11 @@ function CreateCourse() {
     return( 
     <>
     <Appbar isLoggedIn={true} username={JSON.parse(localStorage.getItem('username'))}></Appbar>
-    <div className="courseForm"  style={{width:"60%",margin:"auto",marginTop:"2%"}}>
-        <Typography sx={{fontWeight:"600",fontStyle:"Poppins,sans-serif"}} gutterBottom variant="h2" align="center" color="primary">
+    <div className="courseForm"  style={{width:"60%",margin:"auto",marginTop:"2%",display:"flex",flexDirection:"column",alignItems:"center"}}>
+        <Typography sx={{fontWeight:"600",fontStyle:"Poppins,sans-serif"}} gutterBottom variant="h3" align="center" color="primary">
             Create Course
         </Typography>
-    <Card raised="true">
+    <Card raised="true" style={{width:"120%"}} className="createCourseCard">
     <CardContent style={{display:"flex",flexDirection:"column",alignItems:"center",paddinh:"6%"}}>
             <TextField sx={{marginTop:"2%"}} fullWidth type="text" gutterBottom variant="standard" label="Title" placeholder="Enter Title" onChange={(e)=> {setTitle(e.target.value); setError(false)} }></TextField>
             <TextField  sx={{marginTop:"2%"}} type="text" fullWidth multiline gutterBottom variant="standard" label="Description" placeholder="Enter description" onChange={(e)=> {setDesc(e.target.value); setError(false)}}></TextField>

@@ -13,7 +13,7 @@ function ShowCourses() {
     const [isLoggedIn,setIsLoggedIn] = useState(true);
     useEffect(()=>{
         const access_token = JSON.parse(localStorage.getItem('access_token'));
-        axios.get("http://localhost:3000/admin/courses/",{
+        axios.get("https://coursify.onrender.com/admin/courses/",{
             headers:
             {
                 Authorization: `Bearer ${access_token}`
@@ -45,16 +45,17 @@ function ShowCourses() {
         <Typography variant="h3" style={{textAlign:"center",marginTop:"3%",fontWeight:"600",color:"#0d47a1"}}>Courses</Typography>
         <Button sx={{marginTop:"1.5%"}} onClick={(e)=> {navigate('/createCourse')}} variant="contained" startIcon={<FontAwesomeIcon icon={faPlus} /> }>Add Course</Button>
         </div>
-        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",width:"80%",margin:"auto",gridGap:"8%",marginTop:"3%"}}>
+        <div className="showCoursesDiv" style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",width:"80%",margin:"auto",gridGap:"8%",marginTop:"3%",marginBottom:"3%"}}>
         {courses.map(c => <Course title={c.title} description={c.description} price={c.price} imgLink={c.imageLink} key={c._id} id={c._id} />)}
-        </div></div>}
+        </div>
+        </div>}
     </div>)
 }
 
 
 function handleDelete(id){
     const access_token = JSON.parse(localStorage.getItem('access_token'));
-    axios.delete(`http://localhost:3000/admin/courses/${id}`,{
+    axios.delete(`https://coursify.onrender.com/admin/courses/${id}`,{
         headers:{
             Authorization: `Bearer ${access_token}`
         }
@@ -69,7 +70,7 @@ export function Course(props) {
     const navigate = useNavigate();
     return(
         <> 
-    <Card raised="true" style={{minHeight:"60vh"}}>
+    <Card className="showCourseDivCard" raised="true" style={{minHeight:"60vh"}}>
     <CardMedia  
     height={200}
     component="img"
@@ -78,9 +79,9 @@ export function Course(props) {
     <CardContent >
         <Typography sx={{fontFamily:"Poppins,sans-serif",marginBottom:"4%"}} variant="h5" align="center" style={{fontWeight:"600"}}>{props.title}</Typography>
         <Typography sx={{fontFamily:"Poppins,sans-serif",marginBottom:"4%"}}   variant="h6" align="center">{props.description}</Typography>
-        <Typography  sx={{fontFamily:"Poppins,sans-serif",marginBottom:"4%"}} variant="h6" align="center" style={{fontWeight:"800"}}>Rs.{props.price}</Typography>
+        <Typography  sx={{fontFamily:"Poppins,sans-serif",marginBottom:"4%"}} variant="h6" align="center" style={{fontWeight:"800"}}>₹ {props.price}</Typography>
         <div style={{display:"flex",alignItems:"center",justifyContent:"space-evenly"}}>
-        <Button variant="contained" onClick={(e)=>{navigate(`/admin/courses/${props.id}`)}}  startIcon={<FontAwesomeIcon icon={faPenToSquare} />} sx={{width:"40%",marginBottom:"4%"}}>Edit</Button>
+        <Button variant="contained" onClick={(e)=>{navigate(`/courses/${props.id}`)}}  startIcon={<FontAwesomeIcon icon={faPenToSquare} />} sx={{width:"40%",marginBottom:"4%"}}>Edit</Button>
         <Button variant="contained" color="error" onClick={(e)=>{handleDelete(props.id)}}  startIcon={<FontAwesomeIcon icon={faTrash} />} sx={{width:"40%",marginBottom:"4%"}}>Remove</Button>
         </div>   
         

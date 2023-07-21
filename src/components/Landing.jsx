@@ -15,8 +15,8 @@ function Landing() {
     <div style={{position:"absolute",top:"50%",left:"28%",color:"white",textAlign:"cetner"}}>
         <h1>Welcome to the best place to learn</h1>
         <ButtonGroup align="center" variant="contained">
-            <Button variant="contained" onClick={(e)=>{navigate('/login')}}>Login</Button>
             <Button variant="contained" onClick={(e)=>{navigate('/register')}}>Signup</Button>
+            <Button variant="contained" onClick={(e)=>{navigate('/login')}}>Login</Button>
         </ButtonGroup>
     </div>
     </>

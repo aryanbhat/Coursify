@@ -8,10 +8,11 @@
 	scroll-behavior: smooth;
 }
 body {
-	background: linear-gradient(-45deg,#d3cce3,#e9e4f0);
+	background: url(/src/assets/joe-woods-4Zaq5xY5M_c-unsplash.jpg);
+	/* background: linear-gradient(-45deg,#d3cce3,#e9e4f0);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
-	height: 100vh;
+	height: 100vh; */
 }
 
 @keyframes gradient {
@@ -28,4 +29,58 @@ body {
 
 .fontPoppins{
 	font-family: 'Poppins',sans-serif;
+}
+
+@media only screen and (max-width: 1200px){
+	
+	.showCoursesDiv{
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		justify-content: space-between !important;
+	}
+	.showCourseDivCard{
+		margin-top: 5% !important;
+		margin-bottom: 10% !important;
+	}
+	.signupCard{
+		padding: 10% !important;
+		width: 60% !important;
+	}
+	.createCourseCard{
+		width: 130%;
+	}
+	.editCourse{
+		display: flex !important;
+		flex-direction: column-reverse !important;
+		align-items: center !important;
+		justify-content: space-between !important;
+	}
+	.editCourseCard{
+		width: 80% !important;
+		margin-top: 6% !important;
+	}
+	.editCourseCardEdit{
+		width: 80% !important;
+		margin-top: 5% !important;
+	}
+	.userCoursesDiv{
+		display: flex !important;
+		flex-direction: column;
+	}
+	.userCoursesDivCard{
+		margin-top: 10%;
+		margin-bottom: 5%;
+	}
+	.getPurchasedDiv{
+		display: flex !important;
+		flex-direction: column !important;
+	}
+	.getPurchasedCard{
+		margin-top: 5% !important;
+		margin-bottom: 5% !important;
+	}
+	.imageEachCourse{
+		min-width: 100% !important;
+	}
 }

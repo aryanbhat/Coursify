@@ -6,6 +6,9 @@ import Register from './components/Register';
 import ShowCourses from './components/ShowCourses';
 import EditCourse from './components/EditCourse';
 import NoPage from './components/NoPage';
+import GetCourses from './components/user/GetCourses';
+import ShowCourse from './components/user/ShowCourse';
+import EachCourse from './components/user/EachCourse';
 // This file shows how you can do routing in React.
 // Try going to /login, /register, /about, /courses on the website and see how the html changes
 // based on the route.
@@ -21,6 +24,9 @@ function App() {
                 <Route path="/createCourse" element={<CreateCourse />} />
                 <Route path="/courses" element={<ShowCourses />} />
                 <Route path="/courses/:id" element={<EditCourse />} />
+                <Route path='/user/courses' element={<GetCourses/>} />
+                <Route path='/user/purchasedcourses' element={<ShowCourse />} />
+                <Route path="/user/courses/:id" element={<EachCourse />} />
                 <Route path="*" element={<NoPage />} />
             </Routes>
         </Router>
