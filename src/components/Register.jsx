@@ -113,7 +113,7 @@ function Register() {
          margin="normal" />
          {error && <Typography sx={{color:"red",fontStyle:"Poppins,sans-serif",fontWeight:"700"}}>{errmessage}</Typography>}
         <Button size="large" variant="contained" style={{margin:"3%"}} onClick={Handleclick}>Signup</Button>
-        <div style={{margin:"3%"}}>Already a user? <Link underline="hover" href="" onClick={()=> {navigate('/login')}}>Login</Link></div>
+        <div style={{margin:"3%"}}>Already a user? <Button variant="text"  onClick={()=> {navigate('/login')}}>Login</Button></div>
         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
           { userType ? 'User created Successfully' : "Admin created successfully"}

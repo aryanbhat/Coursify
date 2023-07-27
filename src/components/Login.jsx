@@ -113,7 +113,7 @@ onChange={(e)=>{setPass(e.target.value); setError(false)}}
  margin="normal" />
  {error && <Typography sx={{color:"red",fontStyle:"Poppins,sans-serif",fontWeight:"700"}}>{errmessage}</Typography>}
 <Button size="large"  variant="contained" style={{margin:"3%"}} onClick={handleBtn}>Login</Button>
-<div style={{margin:"3%"}}>Not a user? <Link underline="hover" href="" onClick={()=> {navigate('/register')}}>signup</Link></div>
+<div style={{margin:"3%"}}>Not a user? <Button variant="text" onClick={()=> {navigate('/register')}}>signup</Button></div>
 </>
 }
     
