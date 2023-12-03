@@ -14,7 +14,7 @@ function Landing() {
         <video src={videoBg} autoPlay muted loop  style={{width:"100%",height:"87.1vh",objectFit:"cover",background:"(0,0,0,6)"}}></video>
     <div style={{position:"absolute",top:"50%",left:"28%",color:"white",textAlign:"cetner"}}>
         <Typography variant="h4" sx={{fontWeight:"600"}}>Welcome to the best place to learn</Typography>
-        <Button variant="contained" onClick={()=>{navigate('/register')}}>Enroll now</Button>
+        <Button variant="contained" onClick={()=>{navigate('/user/courses')}}>Learn Now</Button>
     </div>
     </>
     )

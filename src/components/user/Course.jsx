@@ -64,7 +64,7 @@ const Course = (props) => {
                 <Typography  sx={{fontFamily:"Poppins,sans-serif",marginBottom:"4%"}} variant="h6" align="center" style={{fontWeight:"800"}}>₹{props.price}</Typography>
                 <div style={{display:"flex",alignItems:"center",justifyContent:"space-evenly"}}>
                 </div>   
-                { props.isPurchased || bought ? <><Button onClick={()=> navigate(`/user/courses/${props.id}`)} startIcon={<FontAwesomeIcon icon={faGift} />} variant='outlined' fullWidth>Go to Courses</Button></> : <Button variant='contained'  fullWidth startIcon={<FontAwesomeIcon icon={faCartShopping} />} 
+                { props.isPurchased || bought ? <><Button onClick={()=> navigate(`/user/courses/${props.id}`)} startIcon={<FontAwesomeIcon icon={faGift} />} variant='outlined' fullWidth>Go to Course</Button></> : <Button variant='contained'  fullWidth startIcon={<FontAwesomeIcon icon={faCartShopping} />} 
   onClick={(e)=> {handleClickBuy(props.id);}}>Buy Now</Button> }
                 <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
                   <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>

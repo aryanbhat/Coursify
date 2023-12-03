@@ -1,17 +1,28 @@
-import React from 'react';
-import { AppBar, ButtonGroup, Typography, Button,Link} from '@mui/material';
+
+import { AppBar,  Typography, Button,Link} from '@mui/material';
+import { useEffect } from 'react';
 import {  useNavigate } from 'react-router-dom';
 
-function Appbar({isLoggedIn,username}){
+
+
+function Appbar({isLoggedIn , username}){
   const navigate = useNavigate();
-  function handleClick(e){
+
+    useEffect(()=>{
+      if(!localStorage.getItem('token')){
+        navigate('/login');
+      }
+    },[])
+
+
+  function handleClick(){
     localStorage.removeItem('access_token');
     localStorage.removeItem('username');
     navigate('/login');
   }
   return (
   <AppBar  position='sticky' color='default' style={{height:"12vh",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",width:"100%"}}>
-        <Link underline='none' style={{marginLeft:"10%",fontWeight:"600",fontSize:"2em"}} onClick={(e)=>{navigate('/')}} href='#'>
+        <Link underline='none'  style={{marginLeft:"10%",fontWeight:"600",fontSize:"2em"}} onClick={()=>{}} >
         Coursify
         </Link>
         <div style={{marginRight:"10%",display:"flex"}} >
