@@ -12,12 +12,14 @@ function Appbar({isLoggedIn , username}){
       if(!localStorage.getItem('token')){
         navigate('/login');
       }
-    },[])
+    },[navigate])
 
 
   function handleClick(){
     localStorage.removeItem('access_token');
     localStorage.removeItem('username');
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
     navigate('/login');
   }
   return (
