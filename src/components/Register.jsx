@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import "./style/style.css";
 import Appbar from "./Appbar";
-import { Route, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   Card,
   Button,
   TextField,
-  Link,
   Typography,
   Switch,
   Snackbar,

@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Card,
   CardMedia,
@@ -66,7 +65,7 @@ const Course = (props) => {
       <Card
         className="userCoursesDivCard"
         raised={true}
-        style={{ minHeight: "60vh" }}
+        style={{ height: "fit-content" }}
       >
         <CardMedia
           height={200}

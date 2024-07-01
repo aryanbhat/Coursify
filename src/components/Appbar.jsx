@@ -5,15 +5,6 @@ import { useNavigate } from "react-router-dom";
 function Appbar({ isLoggedIn, username }) {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (
-      !localStorage.getItem("token") ||
-      !localStorage.getItem("access_token")
-    ) {
-      navigate("/login");
-    }
-  }, [navigate]);
-
   function handleClick() {
     localStorage.removeItem("access_token");
     localStorage.removeItem("username");
