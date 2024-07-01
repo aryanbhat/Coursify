@@ -6,7 +6,10 @@ function Appbar({ isLoggedIn, username }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!localStorage.getItem("token")) {
+    if (
+      !localStorage.getItem("token") ||
+      !localStorage.getItem("access_token")
+    ) {
       navigate("/login");
     }
   }, [navigate]);

@@ -32,7 +32,7 @@ function Register() {
     setOpen(false);
   };
 
-  function Handleclick(e) {
+  function Handleclick() {
     setLoading(true);
     if (email === "" || password === "") {
       setErrmessage("Invalid username or password");
@@ -45,6 +45,7 @@ function Register() {
           password: password,
         })
         .then((res) => {
+          console.log(res);
           setOpen(true);
           setLoading(false);
           setTimeout(() => {
@@ -52,6 +53,7 @@ function Register() {
           }, 1000);
         })
         .catch((err) => {
+          console.log(err);
           setErrmessage("User already exists");
           setError(true);
           setLoading(false);
@@ -64,6 +66,7 @@ function Register() {
           password: password,
         })
         .then((res) => {
+          console.log(res);
           setOpen(true);
           setLoading(false);
           setTimeout(() => {
@@ -71,6 +74,7 @@ function Register() {
           }, 1000);
         })
         .catch((err) => {
+          console.log(err);
           setErrmessage("User already exists");
           setError(true);
           setLoading(false);
